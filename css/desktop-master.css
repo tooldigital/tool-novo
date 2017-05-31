@@ -10520,6 +10520,11 @@ input {
   width: 100%;
   letter-spacing: 1px;
 }
+#novo .content * {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
 #novo .content section,
 #novo .content .body_container {
   padding: 30px 120px;
@@ -10758,7 +10763,7 @@ input {
   font-family: "LetterGothicStd", "Lucida Console", Monaco, monospace;
   font-style: normal;
 }
-#novo .content .contacts_container .contacts_wrapper .contact h5 {
+#novo .content .contacts_container .contacts_wrapper .contact .email {
   color: white;
   font-family: "TrumpGothicEastMedium", Arial, Helvetica, sans-serif;
   font-size: 1.7rem;
@@ -10845,7 +10850,7 @@ input {
   #novo .content .contacts_container .contacts_wrapper .contact a.tel {
     font-size: 1.3rem;
   }
-  #novo .content .contacts_container .contacts_wrapper .contact h5 {
+  #novo .content .contacts_container .contacts_wrapper .contact .email {
     font-size: 1.6rem;
   }
 }
@@ -10895,7 +10900,7 @@ input {
   #novo .content .contacts_container .contacts_wrapper .contact a.tel {
     font-size: 1.3rem;
   }
-  #novo .content .contacts_container .contacts_wrapper .contact h5 {
+  #novo .content .contacts_container .contacts_wrapper .contact .email {
     font-size: 1.6rem;
   }
 }
@@ -10973,7 +10978,7 @@ input {
   #novo .content .contacts_container .contacts_wrapper .contact h3,
   #novo .content .contacts_container .contacts_wrapper .contact p,
   #novo .content .contacts_container .contacts_wrapper .contact a.tel,
-  #novo .content .contacts_container .contacts_wrapper .contact h5 {
+  #novo .content .contacts_container .contacts_wrapper .contact .email {
     margin-bottom: 8px;
   }
   #novo .content .contacts_container .contacts_wrapper .contact h3 {
@@ -10993,7 +10998,7 @@ input {
   #novo .content .contacts_container .contacts_wrapper .contact a.tel {
     font-size: 1rem;
   }
-  #novo .content .contacts_container .contacts_wrapper .contact h5 {
+  #novo .content .contacts_container .contacts_wrapper .contact .email {
     font-size: 1.2rem;
   }
 }
