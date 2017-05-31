@@ -1,0 +1,241 @@
+{
+	"content": null,
+	"header-text-1": "",
+	"header-text-2": "",
+
+	"subnavi": {
+		"template": "data/templates/subnavi/soft-menu.html",
+		"css": "css/src/subnavi.less",
+		"navi": [
+			{
+				"section": "main",
+				"name": "Offices"
+			},
+			{
+				"section": "people",
+				"name": "People"
+			}
+		]
+	},
+
+	"headers": {
+		"networks": "NETWORKS",
+		"staff": "STAFF",
+		"sales": "SALES"
+	},
+
+	"offices": [
+		{
+			"symbol": "LA",
+			"city": "Los Angeles",
+			"address": "2210 Broadway\nSanta Monica, CA 90404",
+			"phone": "310.453.9244",
+			"fax": "310.453.4185",
+			"map": "http://maps.apple.com?q=2210+BROADWAY+SANTA+MONICA+CA+90404"
+		},
+		{
+			"symbol": "LN",
+			"city": "London",
+			"address": "",
+			"map": "http://maps.apple.com/?q=Novo+Films",
+			"phone": "+44 7956 337 624",
+			"name": "Debbie Turner"
+		},		
+		{
+			"symbol": "FR",
+			"city": "France",
+			"address": "",
+			"map": "http://maps.apple.com?q=Novo+Films",
+			"phone": "+44 7956 337 624",
+			"name": "Debbie Turner"
+		}
+	],
+
+	"staff": [
+		{
+			"name": "Dustin Callif",
+			"title": "Managing Partner",
+			"email": "dustin@toolofna.com",
+			"phone": "310.453.9244"
+		},
+		{
+			"name": "Oliver Fuselier",
+			"title": "Managing Partner",
+			"email": "oliver@toolofna.com",
+			"phone": "310.453.9244"
+		},
+		{
+			"name": "Mike Lobikis",
+			"title": "Head of Development",
+			"email": "mike.lobikis@toolofna.com",
+			"phone": "310.453.9244"
+		},
+		{
+			"name": "Chris Neff",
+			"title": "Director of Digital & Experiential / Executive Producer",
+			"email": "chris.neff@toolofna.com",
+			"phone": "310.453.9244"
+		},
+		{
+			"name": "Brad Johns",
+			"title": "Executive Producer / Live Action",
+			"email": "brad.johns@toolofna.com",
+			"phone": "310.453.9244"
+		},
+		{
+			"name": "Sarah DiLeo",
+			"title": "Executive Producer / Integrated",
+			"email": "sarah.dileo@toolofna.com",
+			"phone": "310.453.9244" 
+		},
+		{
+			"name": "Julia Sourikoff",
+			"title": "Executive Producer / VR & 360",
+			"phone": "310.453.9244",
+			"email": "julia.sourikoff@toolofna.com"
+		},
+		{
+			"name": "Jennifer Baker",
+			"title": "Executive Producer / Experiential",
+			"phone": "310.453.9244",
+			"email": "jennifer.baker@toolofna.com"
+		},
+		{
+			"name": "Adam Baskin",
+			"title": "Executive Producer / Digital",
+			"phone": "310.453.9244",
+			"email": "adam.baskin@toolofna.com"
+		}
+	],
+
+	"sales": [
+		{
+			"region": "sales # west coast",
+			"members": [
+				{
+					"name": "Charlie McBrearty",
+					"title": "",
+					"email": "charlie@shortlistmgmt.com",
+					"phone": "310.659.1540"
+				},
+				{
+					"name": "Vanessa McLean",
+					"title": "",
+					"email": "vanessa@shortlistmgmt.com",
+					"phone": "310.659.1540"
+				},
+				{
+					"name": "Nikkayla Hyder (Digital)",
+					"title": "",
+					"email": "nikkayla@hustle.rs",
+					"phone": "702.327.7885"
+				}
+			]
+		},
+
+		{
+			"region": "sales # midwest",
+			"members": [
+				{
+					"name": "Sean Sullivan",
+					"title": "",
+					"email": "sean@sullivancreativemgmt.com",
+					"phone": "312.410.7500"
+				},
+				{
+					"name": "Jake Neske (Digital)",
+					"title": "",
+					"email": "jake@hustle.rs",
+					"phone": "917.733.4765"
+				}
+			]
+		},
+
+		{
+			"region": "sales # east coast",
+			"members": [
+				{
+					"name": "Anya Zander",
+					"title": "",
+					"email": "anya@hustle.rs",
+					"phone": "917.338.6544"
+				},
+				{
+					"name": "Jake Neske (Digital)",
+					"title": "",
+					"email": "jake@hustle.rs",
+					"phone": "917.733.4765"
+				}
+			]
+		},
+
+		{
+			"region": "sales # france",
+			"members": [
+				{
+					"name": "NOVO Films",
+					"title": "Debbie Turner",
+					"email": "debbie@novofilms.org",
+					"phone": "+44 7956 337 624"
+				},
+				{
+					"name": "Aramique",
+					"phone": "+33 6 15 38 21 49",
+					"email": "aramique@toolofna.com"
+				}
+			]
+		},
+
+		{
+			"region": "sales # uk & amsterdam",
+			"members": [
+				{
+					"name": "NOVO Films",
+					"title": "Debbie Turner",
+					"email": "debbie@novofilms.org",
+					"phone": "+44 7956 337 624"
+				},
+				{
+					"name": "&nbsp;",
+					"title": "Stephen Johnson",
+					"email": "stephen@novofilms.org",
+					"phone": "+44 7974 215 732",
+					"representing": "Representing Tool’s Roster"
+				}
+			]
+		},
+
+		{
+			"region": "music videos",
+			"members": [
+				{
+					"name": "Laure Scott",
+					"email": "laurereps@gmail.com",
+					"phone": "310.459.4860"
+				}
+			]
+		}
+	],
+
+	"networks": [
+		{
+			"name": "twitter",
+			"url": "https://twitter.com/#!/ToolofNA",
+			"mobileURL": "https://mobile.twitter.com/toolofna",
+			"imageDesktop": "assets/imgs/connect/social_tw_btn.png",
+			"imageMobile": "assets/imgs/connect/social_tw_m_btn.png"
+		},
+		{
+			"name": "facebook",
+			"url": "https://www.facebook.com/toolofna",
+			"imageDesktop": "assets/imgs/connect/social_fb_btn.png",
+			"imageMobile": "assets/imgs/connect/social_fb_m_btn.png"
+		},
+		{
+			"name": "vimeo",
+			"url": "https://vimeo.com/toolofna",
+			"imageDesktop": "assets/imgs/connect/social_vi_btn.png",
+			"imageMobile": "assets/imgs/connect/social_vi_m_btn.png"
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+    "subnavi": {
+
+        "template": "data/templates/subnavi/menu.html",
+        "css": "css/src/subnavi.less",
+
+        "navi": [
+            {
+                "name": "Tool",
+                "slug": "#/about/tool"
+            },
+            {
+                "name": "Live-Action",
+                "slug": "#/about/live-action"
+            },
+            {
+                "name": "Digital",
+                "slug": "#/about/digital"
+            }
+        ]
+    },
+
+    "top": {
+        "splashDesktop": "assets/imgs/about/background-top.jpg",
+        "splashMobile": "assets/imgs/about/background-top_mobile.jpg",
+        "logo": "assets/imgs/about/tool-logo-small.png"
+    }
+}

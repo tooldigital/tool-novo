@@ -1,0 +1,46 @@
+<div class="tabs">
+    <% slides.forEach(function(slide, i){ %>
+        <div class="tab" index="<%=i%>">
+            <div class="slider"></div>
+        </div>
+    <% }) %>
+</div>
+
+<div id="view-reel">
+    <div class="label">view reel</div>
+</div>
+
+<div class="slides">
+<% slides.forEach(function(slide, i){ %>
+    <div class="slide">
+        <div class="poster" style='background-image: url(<%= slide.poster %> )'></div>
+        <div class="slide-content">
+            <div class="logos">
+                <img src="<%= location.pathname %>assets/imgs/home/logos/tool.svg">
+                <% slide.logos.forEach(function(logo){ %>
+                    <div class="plus">+</div>
+                    <img src="<%= location.pathname %>assets/imgs/home/logos/<%= logo %>.svg">
+                <% }) %>
+            </div>
+            
+            <h1 class="title">
+                <% slide.title.split(' | ').forEach(function(line){ %>
+                    <div class="line">
+                        <div class="sizer"><%= line %></div>
+                        <div class="display"><%= line %></div>
+                    </div>
+                <% }) %>            
+            </h1>
+
+            <div class="news">
+                <div class="red-block"></div>
+                <a href="<%= slide.news.url %>" target="_blank">
+                    <% slide.news.text.split(' | ').forEach(function(line){ %>
+                        <div><%= line %></div>
+                    <% }) %>
+                </a><br>
+            </div>
+        </div>
+    </div>
+<% }) %>
+</div>

@@ -1,0 +1,47 @@
+<div class="awards-header">
+
+    <h1>
+        <span id='awards-header-letter-1'></span>
+        <span id='awards-header-letter-2'></span>
+        <span id='awards-header-letter-3'></span>
+    </h1>
+    
+    <h2><span id='awards-header-text-1'>%header-text-1%</span></h2>
+    <!-- <h2><span id='awards-header-text-2'>%header-text-2%</span></h2> -->
+    
+    <ul id="awards-featured">
+        %for(featured)%
+        <li><div><span class='icon icon-%this.type.toLowerCase()%'></span><br>%this.amount.pad(2)%</div></li>
+        %for%
+    </ul>
+</div>
+
+<div class="awards-list">
+    <ul class="headers">
+        <li>
+            %for(headers)%
+            <div>%this%</div>
+            %for%
+        </li>
+    </ul>
+    <ul class="project">
+        %for(projects)%
+        <li>
+            <div>
+                %if(this.client)%<h6>%this.client%</h6><br>%if%
+                %if(this.slug)%<a href="%this.slug%">%if%%this.project%%if(this.slug)%</a>%if%
+            </div>
+            <div>
+                %this.awards%
+            </div>
+            <div>
+                %this.direction%
+            </div>
+            <div>
+                %if(this.agency)%<h5>AGENCY</h5><h6>%this.agency%</h6><br>%if%
+                %if(this.year)%<h5>YEAR</h5><h6>%this.year%</h6>%if%
+            </div>
+        </li>
+        %for%
+    </ul>
+</div>

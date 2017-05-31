@@ -1,0 +1,28 @@
+{
+    "subnavi": {
+
+        "template": "data/templates/subnavi/soft-menu.html",
+        "css": "css/src/subnavi.less",
+
+        "navi": [
+            {
+                "name": "Tool",
+                "section": "main"
+            },
+            {
+                "name": "Live-Action",
+                "section": "live-action"
+            },
+            {
+                "name": "Digital",
+                "section": "digital"
+            }
+        ]
+    },
+
+    "top": {
+        "splashDesktop": "assets/imgs/about/background-top.jpg",
+        "splashMobile": "assets/imgs/about/background-top.jpg",
+        "logo": "assets/imgs/about/tool-logo-small.png"
+    }
+}

@@ -1,0 +1,61 @@
+<ul class="offices">
+    %for(offices)%
+    <li>
+        <h1 class="office-symbol"><span>%this.symbol%</span></h1>
+
+        <h2 class="office-city">%this.city%</h2>
+
+        <div class="office-details">
+            %if(this.map)%
+            <a class='map' href='%this.map%' target='_blank'>VIEW MAP</a>
+            <a class='info' href='%this.map%' target='_blank'>%this.address%</a>
+            %if%
+            %if(this.phone)%<h4>p: %this.phone%</h4>%if%
+            %if(this.fax)%<h4>f: %this.fax%</h4>%if%
+            %if(this.name)%<h4>%this.name%</h4>%if%
+        </div>
+
+    </li>
+    %for%
+</ul>
+
+<ul class="networks">
+    %for(networks)%
+    <li style='background-image: url(%this.imageDesktop%)'><a href='%this.url%' target='_blank'>%this.name%</a></li>
+    %for%
+</ul>
+
+<div class="contacts" id="contact-people">
+
+    <h1 >%headers.staff%</h1>
+
+    <div class="divider">
+        <div></div>
+        <div></div>
+    </div>
+    <ul>
+        %for(staff)%
+        <li>
+            <h2>%this.name%</h2>
+
+            <h3>%this.title%</h3>
+            %if(this.phone)%<h4>%this.phone%</h4>%if%
+            <a class="full" href='mailto:%this.email%'>%this.email%</a>
+            <a class="short" href='mailto:%this.email%'>e-mail</a>
+        </li>
+        %for%
+    </ul>
+
+    %for(sales)%
+    <h1>%this.region.split('#').join('')%</h1>
+
+    <div class="divider">
+        <div></div>
+        <div></div>
+    </div>
+    <ul>
+        %this.membersHTML%
+    </ul>
+    %for%
+
+</div>

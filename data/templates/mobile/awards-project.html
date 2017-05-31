@@ -1,0 +1,59 @@
+<div class="project">
+  <%if(client){%> <h2><%=client%></h2><%}%>
+  <h1><a<%if(slug){%> href="<%=slug%>"> <%}%><%=project%></a></h1>
+
+  <div class="awards">
+    <%fori(awards, function(a, i){%>
+    <div class="award">
+      <div class='icon icon-<%=a[i][0].toLowerCase()%>'></div>
+      <span><%=a[i][1]%></span>
+    </div>
+    <%})%>
+  </div>
+
+  <div class="directors">
+      <div class="direction">
+
+        <span class="role"><%=direction[0].role%><%if(direction.length > 1)print('s')%> - </span>
+      <%
+
+        var intDirectorNames = [];
+        var directorNames = [];
+
+        fori(direction || [], function(d, j){
+          if(d[j].role == "Director")
+            directorNames.push(d[j].name);
+          else
+            intDirectorNames.push(d[j].name);
+        });
+
+        directorNames.sort();
+        intDirectorNames.sort();
+
+        directorNames = directorNames.concat(intDirectorNames);
+
+        fori(directorNames, function(d, j){
+          var tag = '<a class="name" href="' + direction[j].slug + '">' + d[j];
+          print(tag);
+          if(j < d.length - 1)
+            print(', ');
+          print('</a>');
+        });
+      %>
+      </div>
+
+    <% if(agency.length > 0){ %>
+    <div class="direction">
+      <span class="role">agency - </span> <a class="name"><%=agency%></a>
+    </div>
+    <% } %>
+
+    <% if(year){ %>
+    <div class="direction">
+      <span class="role">year - </span> <a class="name" href="<%=year%>"><%=year%></a>
+    </div>
+    <% } %>
+
+  </div>
+
+</div>

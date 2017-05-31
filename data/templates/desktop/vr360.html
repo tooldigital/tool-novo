@@ -1,0 +1,51 @@
+<section class="about">
+	<div class="content">
+		<header>
+			<h1>virtual reality / 360</h1>
+			<!-- <h2>storytelling.</h2> -->
+			<!-- <h2>technology.</h2> -->
+			<!-- <h2>innovation.</h2> -->
+			<h2>HUMAN-CENTERED STORYTELLING</h2>
+		</header>
+		<p>
+			Human-centered storytelling is at the heart of Tool’s approach to VR and 360. From live action cinematic VR to real-time rendered CGI, our creative process is designed around the sensitivities of user experience. Our directors, artists and technologists understand the nuances of sound, haptics, and visual cues when it comes to directing user gaze and creating presence in the virtual world. We are a turnkey shop wth capabilities that include 360 mono/stereo live action, game engine development, CGI, UX/UI, app development, post and stitching, installation design, and environmental builds. As experts in platform and distribution strategy, we work across Oculus, Vive, GearVR, Cardboard, and browser-based 360 to optimize reach and accessibility for any audience.
+		</p>
+	</div>
+</section>
+
+<section class="reel">
+	<div class="content">
+		<h1>VR / 360 show reel</h1>
+		<div class="play btn">play</div>	
+	</div>
+</section>
+
+<div id="reel-video">
+	<div class="close-button"></div>
+	<video src="%splashVideo%" controls></video>
+</div>
+
+<section class="projects">
+	<div class="content">
+		%for(projects)%
+			<a class="project" href="%this.slug%">
+				<header>
+					%if(this.client[0])%<h2>%this.client[0].name%</h2>%if%
+					%if(this.directors[0])%<h2>%this.directors[0].name%</h2>%if%
+					<h1>%this.name%</h1>
+				</header>
+				<div class="image">
+					<img src="%this.thumbSmall%" alt="">
+				</div>
+			</a>
+		%for%
+	</div>
+</section>
+
+<section class="contact">
+	<div class="content">
+		<div class="name">Julia Sourikoff</div>
+		<div class="title">Head of VR &amp; 360</div>
+		<div class="email"><a href="mailto:julia.sourikoff@toolofna.com">julia.sourikoff@ToolofNA.com</a></div>
+	</div>
+</section>

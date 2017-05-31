@@ -1,0 +1,119 @@
+<div id="connect-header">
+  <span>
+    OFFICES : STAFF : SALES
+  </span>
+</div>
+<div id="connectSec1" class="viewSection">
+
+  <%fori(offices, function(o, i){%>
+  <div class="office">
+    <div><%=o[i].city%></div>
+    <a class="black" <%if(o[i].map){%>data-href=<%=o[i].map%><%}%> target="_blank">
+      <%if(o[i].address){%><%=o[i].address.replace(/\n/g, "<br>")%><%}%>
+      <br><br>
+
+      <%if(o[i].phone){%>
+      <a class="red" data-href="tel://<%=o[i].phone.replace(/\./g, '')%>" class='offPh'>p: <%=o[i].phone%></a>
+      <%}%>
+
+      <%if(o[i].fax){%>
+      <a class="red" data-href="tel://<%=o[i].phone.replace(/\./g, '')%>" class='offPh'>f: <%=o[i].fax%></a>
+      <%}%>
+
+    </a>
+  </div>
+  <%})%>
+
+</div>
+
+<div id="connectSec2" class="viewSection">
+  <div class="expandable">
+    <header id="staff-header" data-i="0">
+      <h1><%=headers.staff%></h1>
+
+      <div class="plus-btn">
+        <div></div>
+        <div></div>
+      </div>
+    </header>
+
+    <div id="staff_cont" class="contactsCont accordion closed">
+
+      <%fori(staff, function(s, i){%>
+      <div class="contact">
+        <div class="name"><%=s[i].name%></div>
+        <div class="title"><%=s[i].title%></div>
+        <div class="rule"></div>
+        <a class="email" data-href="tel://<%=s[i]['phone'].replace(/\./g, '')%>" class='offPh' target="_blank"><%=s[i]['phone']%></a>
+        <a class="email" data-href="mailto:<%=s[i].email%>?subject=Tool%20Website%20Inquiry "><%=s[i].email%></a>
+      </div>
+      <%})%>
+    </div>
+  </div>
+  <%fori(sales, function(sales, i){%>
+  <div class="expandable">
+
+    <header class="sales-header" data-i="<%=i+1%>">
+      <h1><%=sales[i].region.split("#")[0]%> <span><%=sales[i].region.split("#")[1]%></span></h1>
+
+      <div class="plus-btn">
+        <div></div>
+        <div></div>
+      </div>
+    </header>
+
+    <div class="contacts accordion closed">
+      <%fori(sales[i].members, function(m, j){%>
+      <div class="contact">
+        <div class="name"><%= m[j].name %></div>
+          <%
+          if(m[j].title){
+            var titles = m[j].title.split(",");
+            var emails = m[j].email.split(",");
+            fori(titles, function(titles, k){
+              print('<div class="title">'+titles[k]+'</div>');
+              var email = '<a class="email" data-href="mailto:' + emails[k] + '?subject=Tool%20Website%20Inquiry">' + emails[k] + '</a>';
+              print(email);
+            })
+          }
+          %>
+        <div class="rule"></div>
+        <a class="email" data-href="tel://<%=m[j].phone.replace(/\./g, '')%>"><%=m[j].phone%></a>
+
+        <%
+        %>
+        <% if(m[j].email.split(',').length == 1 && !m[j].title){  %>
+          <a class="email" data-href="mailto:<%=m[j].email%>?subject=Tool%20Website%20Inquiry"><%=m[j].email%></a>
+        <%}%>
+
+        <%if(m[j].representing){%>
+          <div class="title">representing</div>
+          <a class="rep"><%= m[j].representing %></a>
+        <%}%>
+
+      </div>
+
+      <%})%>
+    </div>
+
+  </div>
+  <%})%>
+
+  </div>
+
+
+</div>
+
+<div id="connectSec3" class="viewSection">
+  <h1><%=headers.networks%></h1>
+
+  <div id="networks_cont" class="accordion closed">
+    <%fori(networks, function(n, i){%>
+    <div class="network_btn_box">
+      <a class='network_btn' href="<% print(n[i].mobileURL || n[i].url) %>" style='background-image: url(<%=n[i].imageMobile%>);' target="_blank">
+        <div><%=n[i].name%></div>
+      </a>
+    </div>
+    <%})%>
+  </div>
+</div>
