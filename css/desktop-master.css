@@ -10591,6 +10591,9 @@ input {
   padding-bottom: 10px;
   border-bottom: 3px solid #a3a3a3;
 }
+#novo .content .body_container section h3 br {
+  display: none;
+}
 #novo .content .body_container section h4 {
   color: black;
 }
@@ -10759,4 +10762,238 @@ input {
   color: white;
   font-family: "TrumpGothicEastMedium", Arial, Helvetica, sans-serif;
   font-size: 1.7rem;
+}
+@media screen and (max-width: 1480px) {
+  #novo .content .body_container section .directors_wrapper {
+    padding: 100px 30px 200px 30px;
+  }
+  #novo .content .body_container section li a h4 {
+    font-size: 32px;
+  }
+  #novo .content .body_container section.work ul li a h4 {
+    font-size: 48px;
+  }
+  #novo .content .body_container section.work ul li.small {
+    width: 185px;
+  }
+  #novo .content .body_container section.work ul li.large {
+    width: 275px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  #novo .content h3 {
+    font-size: 2rem;
+  }
+  #novo .content section,
+  #novo .content .body_container {
+    padding: 30px 60px;
+  }
+  #novo .content .intro {
+    height: 85vh;
+  }
+  #novo .content .intro .logos_container figure {
+    width: 50%;
+  }
+  #novo .content .intro .main_description br {
+    display: none;
+  }
+  #novo .content .intro div {
+    margin-top: 50px;
+  }
+  #novo .content .body_container section h3 {
+    padding-bottom: 0;
+    border-bottom: 1px solid #a3a3a3;
+  }
+  #novo .content .body_container section .column {
+    width: 47%;
+  }
+  #novo .content .body_container section .directors_wrapper {
+    padding: 80px 20px 150px 20px;
+  }
+  #novo .content .body_container section li a div {
+    top: 37px;
+    height: 20px;
+  }
+  #novo .content .body_container section li a h4 {
+    font-size: 26px;
+  }
+  #novo .content .body_container section.work ul {
+    padding: 100px 0;
+  }
+  #novo .content .body_container section.work ul li a h4 {
+    font-size: 35px;
+  }
+  #novo .content .body_container section.work ul li.small {
+    width: 185px;
+  }
+  #novo .content .body_container section.work ul li.large {
+    width: 275px;
+  }
+  #novo .content .contacts_container h3 {
+    padding-bottom: 0;
+    border-bottom: 1px solid #727272;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact {
+    margin: 60px 5%;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact h3 {
+    font-size: 1.8rem;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact p {
+    font-size: 1.3rem;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact a.tel {
+    font-size: 1.3rem;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact h5 {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  #novo .content section,
+  #novo .content .body_container {
+    padding: 30px 40px;
+  }
+  #novo .content .body_container section h3 {
+    padding-bottom: 0;
+    border-bottom: 1px solid #a3a3a3;
+  }
+  #novo .content .body_container section .column {
+    width: 47%;
+  }
+  #novo .content .body_container section .directors_wrapper {
+    padding: 40px 0 100px 0;
+  }
+  #novo .content .body_container section li a h4 {
+    font-size: 25px;
+  }
+  #novo .content .body_container section.work ul {
+    padding: 70px 0;
+  }
+  #novo .content .body_container section.work ul li a h4 {
+    font-size: 28px;
+  }
+  #novo .content .body_container section.work ul li.small {
+    width: 185px;
+  }
+  #novo .content .body_container section.work ul li.large {
+    width: 275px;
+  }
+  #novo .content .contacts_container h3 {
+    padding-bottom: 0;
+    border-bottom: 1px solid #727272;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact {
+    margin: 60px 5%;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact h3 {
+    font-size: 1.8rem;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact p {
+    font-size: 1.3rem;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact a.tel {
+    font-size: 1.3rem;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact h5 {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  #novo .content h3 {
+    font-size: 1.5rem;
+  }
+  #novo .content section,
+  #novo .content .body_container {
+    padding: 20px 25px;
+  }
+  #novo .content .intro {
+    height: 70vh;
+  }
+  #novo .content .intro .logos_container figure {
+    width: 70%;
+  }
+  #novo .content .intro div {
+    margin-top: 35px;
+  }
+  #novo .content .intro p br {
+    display: none;
+  }
+  #novo .content .intro .main_description p {
+    font-size: 2rem;
+  }
+  #novo .content .intro .sub_description p {
+    font-size: 1rem;
+  }
+  #novo .content .intro .sub_description p:after {
+    content: '';
+    display: block;
+    background-color: #e74c4c;
+    width: 26px;
+    height: 2px;
+    margin-top: 34px;
+    margin-left: 2px;
+  }
+  #novo .content .body_container section h3 br {
+    display: inherit;
+  }
+  #novo .content .body_container section .column {
+    width: 100%;
+  }
+  #novo .content .body_container section .directors_wrapper {
+    padding: 40px 0;
+  }
+  #novo .content .body_container section li {
+    display: block;
+    width: 100%;
+  }
+  #novo .content .body_container section li a h4 {
+    font-size: 30px;
+  }
+  #novo .content .body_container section.work ul {
+    padding: 40px 0;
+    flex-direction: column;
+  }
+  #novo .content .body_container section.work ul li a h4 {
+    font-size: 30px;
+  }
+  #novo .content .body_container section.work ul li.small,
+  #novo .content .body_container section.work ul li.large {
+    display: block;
+    width: 100%;
+  }
+  #novo .content .contacts_container .contacts_wrapper {
+    text-align: left;
+    padding-top: 10px;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact {
+    margin: 15px 0;
+    width: 100%;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact h3,
+  #novo .content .contacts_container .contacts_wrapper .contact p,
+  #novo .content .contacts_container .contacts_wrapper .contact a.tel,
+  #novo .content .contacts_container .contacts_wrapper .contact h5 {
+    margin-bottom: 8px;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact h3 {
+    font-size: 1.8rem;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact p {
+    font-size: 1rem;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact p:after {
+    content: '';
+    display: block;
+    background-color: #e74c4c;
+    margin-top: 5px;
+    width: 25px;
+    height: 2px;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact a.tel {
+    font-size: 1rem;
+  }
+  #novo .content .contacts_container .contacts_wrapper .contact h5 {
+    font-size: 1.2rem;
+  }
 }
