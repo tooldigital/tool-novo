@@ -1,231 +1,340 @@
 <!DOCTYPE html>
 <html lang="en-us">
-	<head>
-		<title>Tool + Novo</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-		<link rel="shortcut icon" href="assets/imgs/global/favicon.png">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<meta charset="UTF-8"/>
-		<meta name="description" content="Tool + Novo UK"/>
-		<meta name="keywords" content="tool, novo, uk, Tool NA, Tool of NA, Tool of North America, Sam Cadman, Harry Cocciolo, Sean Ehringer, Anders Hallberg, Erich Joiner, Sam Jones, Robert Richardson, Tom Routson, Geordie Stephens, Meredith Bergman Apicella, Dawn Rao, Nicole Adkins, Charlie McBrearty, Vanessa McClean, Brian Latt, Jennifer Siegel, Production Company, Commercials, Music Videos, Films, Directors, Viral, Digital"/>
-		<meta name="author" content="Tool"/>
-		<meta name="copyright" content="&copy; 2017 Tool of North America"/><link rel="apple-touch-icon" href="assets/imgs/mobile/ToolFav.png"/>
-		<meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<?php 
+	// connect to API to get data
+	//error_reporting(E_ALL);
+	//ini_set('display_errors', '1'); 
 		
-		
-		    <link rel="stylesheet" href="css/global-master.css">
-		    <link rel="stylesheet" href="css/desktop-master.css">
-		    <script type="text/javascript" src="js/common_min.js"></script>
-		
+	
+	// process escaped fragment for Google Search or search engines looking at this page
+	if(isset($_REQUEST['_escaped_fragment_'])){
+		$escaped_fragment = urldecode($_REQUEST['_escaped_fragment_']);
+		// set defaults in case any problems hitting the API 
+		$title = "Tool";
+		$keywords= "Tool, Tool NA, Tool of NA, Tool of North America, Sam Cadman, Harry Cocciolo, Sean Ehringer, Anders Hallberg, Erich Joiner, Sam Jones, Robert Richardson, Tom Routson, Geordie Stephens, Meredith Bergman Apicella, Dawn Rao, Nicole Adkins, Charlie McBrearty, Vanessa McClean, Brian Latt, Jennifer Siegel, Production Company, Commercials, Music Videos, Films, Directors, Viral, Digital";
+		$description = "Congratulations, you have found the award-winning production company, Tool, and are just one small click away from reaching their website.";
+		$content = "<p>Congratulations, you have found the award-winning production company, Tool.</p>";
 
-		
+		// determine page to load
+		$path_array  = explode("/",trim($escaped_fragment,"/"));
+		$url = "http://toolofna.com/cms/api/";
 
-	</head>
-	<body>
-		<div id="novo">
-			<div class="content">
-				<section class="intro">
-					<div class="logos_container">
-						<figure>
-							<img src="./assets/imgs/novo/tool+novo.svg" alt="Tool + Novo">
-						</figure>
-					</div>
-					<div class="main_description">
-						<p>TOOL IS REPRESENTED IN THE UK, AMSTERDAM AND FRANCE <br> BY EXECUTIVE PRODUCERS DEBBIE TURNER AND STEPHEN <br> JOHNSON OF NOVO.</p>
-					</div>
-					<div class="sub_description">
-						<p>NOVO IS BASED IN LONDON AND SERVES AS OUR PRODUCTION <br> HUB FOR TOOL PROJECTS IN THE UK, AMSTERDAM AND FRANCE.</p>
-					</div>
-				</section>
-				<div class="body_container">
-					<section class="work">
-						<h3>OUR WORK</h3>
-						<ul>
-							<li class="small">
-								<a href="http://toolofna.com/#!/work/tag/featured">
-									<div></div>
-									<h4>CONTENT</h4>
-								</a>
-							</li>
-							<li class="large">
-								<a href="http://toolofna.com/#!/work/tag/experiential">
-									<div></div>
-									<h4>EXPERIENTIAL</h4>
-								</a>
-							</li>
-							<li class="small">
-								<a href="http://toolofna.com/#!/work/tag/digital-integrated">
-									<div></div>
-									<h4>DIGITAL</h4>
-								</a>
-							</li>
-							<li class="small">
-								<a href="http://toolofna.com/#!/work/tag/vr-360">
-									<div></div>
-									<h4>VR/360</h4>
-								</a>
-							</li>
-						</ul>
-					</section>
-					<section class="directors">
-						<h3>TOOL DIRECTORS AVAILABLE IN THE UK, AMSTERDAM AND FRANCE</h3>
-						<div class="directors_wrapper">
-							<ul class="column column-left">
-								<li>
-									<a href="http://toolofna.com/#!/director/aramique">
-										<div></div>
-										<h4>ARAMIQUE</h4>
-									</a>
-								</li>
-								
-								<li>
-									<a href="http://toolofna.com/#!/director/brig-white">
-										<div></div>
-										<h4>BRIG</h4>
-									</a>
-								</li>
+		$links ="<a href='http://toolofna.com/#!/home'>Tool</a><br />";
+		$links .="<a href='http://toolofna.com/#!/work'>Work</a><br />";
+		$links .="<a href='http://toolofna.com/#!/directors'>Directors</a><br />";
+		$links .="<a href='http://toolofna.com/#!/awards'>Awards</a><br />";
+		$links .="<a href='http://toolofna.com/#!/about'>About</a><br />";
+		$links .="<a href='http://toolofna.com/blog/'>Blog</a><br />";
+		$links .="<a href='http://toolofna.com/#!/contact'>Contact</a><br />";
 
-								<li>
-									<a href="http://toolofna.com/#!/director/cher-ami">
-										<div></div>
-										<h4>CHER AMI</h4>
-									</a>
-								</li>
+		$content.=$links;
 
-								<li>
-									<a href="http://toolofna.com/#!/director/dan-sully">
-										<div></div>
-										<h4>DAN SULLY</h4>
-									</a>
-								</li>
+		if ($path_array[0] == 'home') {
+			// show home
+			$url .= "index.php?f=home";
+			$data = json_decode(file_get_contents($url));
 
-								<li>
-									<a href="http://toolofna.com/#!/director/danielle-levitt">
-										<div></div>
-										<h4>DANIELLE LEVITT</h4>
-									</a>
-								</li>
+			$content .= "<p>Tool: A production company.</p>";
+			$content .= "<p><img src='".$data->logo."' /></p>";
+			$content .= "<p>Since 1995</p>";
+			$content .= "<a href='http://toolofna.com/#!/home/reel'>View Reel</a><br />";
+			$content .= "<video src='".$data->splashVideoShort."' autoplay='autoplay' ></video><br />";
+			foreach($data->news as $news){ $content .= "<a href='".$news->url."'>" . $news->content. "</a><br />"; }
+			foreach($data->featureImages as $img){ $content .= "<img src='".$img."' /><br />"; }
 
-								<li>
-									<a href="http://toolofna.com/#!/director/eli-roth">
-										<div></div>
-										<h4>ELI ROTH</h4>
-									</a>
-								</li>
+		}
 
-								<li>
-									<a href="http://toolofna.com/#!/director/erich-joiner">
-										<div></div>
-										<h4>ERICH JOINER</h4>
-									</a>
-								</li>
+		if ($path_array[0] == 'work') {
+			if ( count( $path_array) ==1 ){
+				$url .= "projects.php";
+				$title = "Tool: Work";
+				$content = "<h1>Explore our Work</h1>";
+				// load file contents for now, rework this as above after testing and load direct from server side
+				$data = json_decode(file_get_contents($url));
 
-								<li>
-									<a href="http://toolofna.com/#!/director/j-j-adler">
-										<div></div>
-										<h4>J.J. ADLER</h4>
-									</a>
-								</li>
-								
-								<li>
-									<a href="http://toolofna.com/#!/director/jaci-judelson">
-										<div></div>
-										<h4>JACI JUDELSON</h4>
-									</a>
-								</li>
-							</ul>
+				foreach($data->projects as $project ){
+					$content .= "<p>";
+					$content .= "<a href='http://toolofna.com/".$project->slug."'>";
+					$content .= "<h2>" . ($project->name) . "</h2>";
+					$content .= "<img src ='".$project->thumbSmall."' /></a>";
+					foreach($project->client as $client){ $content .= "<br />" . $client->name; }
+					foreach($project->agency as $agency){ $content .= "<br />" . $agency->name; }
+					foreach($project->directors as $director){ $content .= "<br /><a href='http://toolofna.com/".$director->slug."'>" . $director->name .": ". $director->role . "</a>"; }
+					$content .= "</p>";
+				}
+			} else {
+				$slug = $path_array[1];
+				$url .= "projects.php?s=" . $slug;
+				$data = json_decode(file_get_contents($url));
+				if( isset($data->client) ) {$content .= "<h2>" . ($data->client) . "</h2>"; }
+				$content = "<h1>" . $data->name . "</h1>";
+				if(isset($data->description)){$content .= "<p>" . $data->description . "</p>";}
+				$content .= "<img src ='".$data->thumbSmall."' /></a>";
 
-							<ul class="column column-right">
-								<li>
-									<a href="http://toolofna.com/#!/director/kevin-foley">
-										<div></div>
-										<h4>KEVIN FOLEY</h4>
-									</a>
-								</li>
+				foreach($data->agency as $agency){ $content .= "<h4>Agency: " . $agency->name ."</h4>"; }
+				foreach($data->directors as $director){ $content .= "<a href='http://toolofna.com/".$director->slug."'>" . $director->name .": ". $director->role . "</a><br />"; }
+				$content .= "<h2>Awards</h2>";
+				$content .= "<ul>";
+				foreach($data->awards as $award){ $content .= "<li>" . strtoupper(str_replace("-"," ",$award[0])) .": ". $award[1] . "</li>"; }
+				$content .= "</ul>";
 
-								<li>
-									<a href="http://toolofna.com/#!/director/leigh-marling">
-										<div></div>
-										<h4>LEIGH MARLING</h4>
-									</a>
-								</li>
+				$content .="<h2>Press</h2>";
+				foreach($data->press as $r){
+					$content .= "<a href='http://toolofna.com/".$r->url."'>";
+					$content .= "<h3>" . ($r->title) . "</h3></a>";
+					$content .= "<h4>" . ($r->source) . "</h4></a>";
+					$content .= "<p>" . ($r->year) . "</p></a>";
+					$content .= "</a><br />";
+				}
 
-								<li>
-									<a href="http://toolofna.com/#!/director/marc-forster">
-										<div></div>
-										<h4>MARC FORSTER</h4>
-									</a>
-								</li>
-								
-								<li>
-									<a href="http://toolofna.com/#!/director/martin-aamund">
-										<div></div>
-										<h4>MARTIN AAMUND</h4>
-									</a>
-								</li>
 
-								<li>
-									<a href="http://toolofna.com/#!/director/phillip-montgomery">
-										<div></div>
-										<h4>PHILLIP MONTGOMERY</h4>
-									</a>
-								</li>
+			}
 
-								<li>
-									<a href="http://toolofna.com/#!/director/rachel-mcdonald">
-										<div></div>
-										<h4>RACHEL MCDONALD</h4>
-									</a>
-								</li>
+			$description = $content;
+		}
 
-								<li>
-									<a href="http://toolofna.com/#!/director/scott-hicks">
-										<div></div>
-										<h4>SCOTT HICKS</h4>
-									</a>
-								</li>
 
-								<li>
-									<a href="http://toolofna.com/#!/director/shawn-zeytinoglu">
-										<div></div>
-										<h4>SHAWN Z</h4>
-									</a>
-								</li>
+		if ($path_array[0] == 'directors') {
+			$url .= "directors.php";
+			$data = json_decode(file_get_contents($url));
 
-								<li>
-									<a href="http://toolofna.com/#!/director/steve-mapp">
-										<div></div>
-										<h4>STEVE MAPP</h4>
-									</a>
-								</li>
-							</ul>
-							<div class="cleaner">
-						</div>
-					</section>
-				</div>
-				
-				<section class="contacts_container">
-					<h3>CONTACT</h3>
-					<div class= "contacts_wrapper">
-						<div class="contact">
-							<h3 class= "name">DEBBIE TURNER</h3>
-							<p class= "title">EXECUTIVE PRODUCER</p>
-							<!--div class= afterline-->
-							<a class= "tel" href="tel:+44.7956.337.624">+44.7956.337.624</a>
-							<h5 class= "email">debbie@novofilms.org</h5>
-						</div>
-						<div class="contact">
-							<h3 class= "name">STEPHEN JOHNSON</h3>
-							<p class= "title">EXECUTIVE PRODUCER</p>
-							<!--div class= afterline-->
-							<a class= "tel" href="tel:+44.7974.215.732">+44.7974.215.732</a>
-							<h5 class= "email">stephen@novofilms.org</h5>
-							
-						</div>
-						<div class="cleaner">
-					</div>
-				</section>
-			</div>
-		</div>
-	</body>
+			if( count( $path_array) ==1 ){
+				// show directors
+				$title = "Tool: Directors";
+				$content = "<h1>Tool: Directors</h1>";
+				$content .= "<a href='http://toolofna.com/#!/directors/live-action'>";
+				$content .= "<h2>Live Action</h2>";
+				$content .= "<p>".$data->{'live-action'}->description."</p>";
+				$content .= "</a>";
+				$content .= "<a href='http://toolofna.com/#!/directors/interactive'>";
+				$content .= "<h2>Interactive</h2>";
+				$content .= "<p>".$data->interactive->description."</p>";
+				$content .= "</a>";
+			} else {
+				if ($path_array[1] == 'live-action') {
+					$title = "Tool: Live Action Directors";
+					$content = "<h1>Tool: Live Action Directors</h1>";
+					$content .= "<p>".$data->{'live-action'}->description."</p>";
+					foreach($data->{'live-action'}->directors as $director){ $content .= "<a href='http://toolofna.com/".$director->slug."'>" . ucwords($director->name) . "</a><br />"; }
+					$content.="<p></p>";
+				}
+
+				if ($path_array[1] == 'interactive') {
+					$title = "Tool: Interactive Directors";
+					$content = "<h1>Tool: Interactive Directors</h1>";
+					$content .= "<p>".$data->{'interactive'}->description."</p>";
+					foreach($data->{'interactive'}->directors as $director){ $content .= "<a href='http://toolofna.com/".$director->slug."'>" . ucwords($director->name) . "</a><br />"; }
+					$content.="<p></p>";
+				}
+			}
+
+
+			$description = $content;
+
+		}
+
+
+		if ($path_array[0] == 'director' && count( $path_array) > 1) {
+			$slug = $path_array[1];
+			$url .= "directors.php?s=" . $slug;
+			$data = json_decode(file_get_contents($url));
+
+			// show director details
+			$title = "Tool Director: " . $data->name;
+			$content = "<h1>Tool Director: ". $data->name ."</h1>";
+			$content .= "<h2>Work</h2>";
+			foreach($data->work as $project){
+				$content .= "<a href='http://toolofna.com/".$project->slug."'>";
+				$content .= "<img title='".($project->project)."' src ='".$project->thumb . "' />";
+				$content .= "<h2>" . ($project->project) . "</h2>";
+				if( isset($project->client) ) {$content .= "<p>" . ($project->client) . "</p>"; }
+				$content .= "</a><br />";
+			}
+
+			$content .="<h2>Biography</h2>";
+			$content .= "<h3 class='biography'>".$data->bio->header ."</h3>";
+			$content .= "<p class='biography'>".$data->bio->content ."</p>";
+
+			$content .="<h2>Awards</h2>";
+			foreach($data->awards as $project){
+				$content .= "<a href='http://toolofna.com/".$project->slug."'>";
+				$content .= "<h3>" . ($project->project) . "</h3></a>";
+				if( isset($project->client) ) {$content .= "<p>" . ($project->client) . "</p>"; }
+				$content .= "<ul>";
+				foreach($project->awards as $award){
+					if( isset($award[1]) ) {$content .= "<li>" . ($award[1]) . "</li>"; }
+				}
+				$content .= "</ul>";
+				if( isset($project->agency) ) {$content .= "<p>Agency - " . ($project->agency) . "</p>"; }
+				if( isset($project->year) ) {$content .= "<p>Year - " . ($project->year) . "</p>"; }
+
+			}
+
+			$content .="<h2>Recognition</h2>";
+			foreach($data->recognition as $r){
+				$content .= "<a href='http://toolofna.com/".$r->url."'>";
+				$content .= "<h3>" . ($r->title) . "</h3></a>";
+				$content .= "<h4>" . ($r->source) . "</h4></a>";
+				$content .= "<p>" . ($r->year) . "</p></a>";
+				$content .= "</a><br />";
+			}
+
+			$description = $content;
+
+		}
+
+
+
+		if ($path_array[0] == 'awards') {
+
+			$url .= "awards.php";
+			$data = json_decode(file_get_contents($url));
+
+			// show awards page
+			$title = "Tool Awards";
+			$content = "<h1>". $data->{'total'} . " " . $data->{'header-text-1'} . " " . $data->{'header-text-2'} . "</h1>";
+
+			foreach($data->featured as $f){
+				$content .= "<h4>" . ($f->amount) . " " . strtoupper(str_replace("-"," ",$f->type)) ."</h4>";
+			}
+
+			$content .="<h2>Awards</h2>";
+			foreach($data->projects as $project){
+				if( isset($project->client) ) {$content .= "<h4>" . ($project->client) . "</h4>"; }
+				$content .= "<a href='http://toolofna.com/".$project->slug."'>";
+				$content .= "<h3>" . ($project->project) . "</h3></a>";
+				$content .= "<ul>";
+				foreach($project->awards as $award){
+					if( isset($award[1]) ) {$content .= "<li>" . ($award[1]) . "</li>"; }
+				}
+				$content .= "</ul>";
+
+				foreach($project->direction as $d){
+					$content .= "<p><a href='".$d->slug."'>" . ($d->role) . ": " .$d->name . "</a></p>";
+
+				}
+
+
+				if( isset($project->agency) ) {$content .= "<p>Agency - " . ($project->agency) . "</p>"; }
+				if( isset($project->year) ) {$content .= "<p>Year - " . ($project->year) . "</p>"; }
+
+			}
+
+			$description = $content;
+
+		}
+
+
+		if ($path_array[0] == 'about') {
+			// show about page
+			$title = "Tool: About";
+			$content = "<h1>About Tool of North America</h1>";
+			$content .= "<p>Tool has been convincing people to buy things they don't really need... Since 1995.</p>";
+			$content .= "<p>We're an integrated production company with a solid foundation, time-honed best practices and efficiences, ";
+			$content .= "but we're also a company that has continued to innovate and grow.</p>";
+		}
+
+
+		if ($path_array[0] == 'contact') {
+
+			$url .= "connect.php";
+			$data = json_decode(file_get_contents($url));
+
+			// show awards page
+			$title = "Tool Contact";
+			$content = "<h1>Contact Tool</h1>";
+			$content .= "<h1>Offices</h1>";
+
+
+			foreach($data->offices as $o){
+				$content .= "<h3>" . $o->city ."</h3>";
+				$content .= "<p>" . $o->address . "<br />";
+				$content .= "Phone: " . $o->phone . "<br />";
+				$content .= "Fax: " . $o->phone2 . "<br />";
+				$content .= "Map: <a href'". $o->map ."'>". $o->map. "</a><br />";
+				$content .="</p>";
+			}
+
+			$content .= "<h1>Staff</h1>";
+			foreach($data->staff as $o){
+				$content .= "<h3>" . $o->name ."</h3>";
+				$content .= "<h4>" . $o->title . "</h4>";
+				$content .= "<p>Email: " . $o->email . "<br />";
+				$content .= "Phone: " . $o->phone . "<br />";
+				$content .="</p>";
+			}
+
+			$description = $content;
+
+		}
+
+
+		//define('WP_USE_THEMES', false);
+
+		//include('cms/wp-blog-header.php');
+		//status_header( 200 );
+
+
+		//var_dump($data);
+
+		// add bottom links
+		$content .=$links;
+?>
+<head>
+    <title><?php echo $title; ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="shortcut icon" href="assets/imgs/global/favicon.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="<?php echo $description; ?>"/>
+    <meta name="keywords" content="<?php echo $keywords; ?>"/>
+    <meta name="author" content="Tool"/>
+    <meta name="copyright" content="&copy;<?php echo date("Y"); ?> Tool of North America"/><link rel="apple-touch-icon" href="assets/imgs/mobile/ToolFav.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	
+
+	
+	<link rel="stylesheet/less" type="text/css" href="css/global-master.css">
+	
+
+</head>
+<body>
+<?php echo $content; ?>
+</body>
+<?php
+	} else {
+		// procced as normal
+
+?>
+<?php include "redirect.php";?>
+
+
+<head>
+	<title>Tool</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<link rel="shortcut icon" href="assets/imgs/global/favicon.png">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta charset="UTF-8"/>
+	<meta name="description"
+	content="Congratulations, you have found the award-winning production company, Tool, and are just one small click away from reaching their website."/>
+	<meta name="keywords"
+	content="Tool, Tool NA, Tool of NA, Tool of North America, Sam Cadman, Harry Cocciolo, Sean Ehringer, Anders Hallberg, Erich Joiner, Sam Jones, Robert Richardson, Tom Routson, Geordie Stephens, Meredith Bergman Apicella, Dawn Rao, Nicole Adkins, Charlie McBrearty, Vanessa McClean, Brian Latt, Jennifer Siegel, Production Company, Commercials, Music Videos, Films, Directors, Viral, Digital"/>
+	<meta name="author" content="Tool"/>
+	<meta name="copyright" content="&copy;2013 Tool of North America"/><link rel="apple-touch-icon" href="assets/imgs/mobile/ToolFav.png"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	
+    <link rel="stylesheet" href="css/global-master.css">
+    <script type="text/javascript" src="js/common_min.js"></script>
+	
+
+	
+
+	<script>
+    window.onload = Tool.init;
+  </script>
+</head>
+<body></body>
+<?php } ?>
 </html>
